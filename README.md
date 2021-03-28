@@ -29,7 +29,7 @@ On Debian based distros, OpenSSL could be installed with the following command:
 sudo apt install libssl-dev
 ```
 
-#### Compile for source
+#### Compile from source
 In order to compile `manrfc` from scratch, type the following commands:
 
 ```sh
