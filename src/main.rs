@@ -32,6 +32,13 @@ fn main() {
             .takes_value(true)
         )
         .arg(
+            Arg::with_name("abstract")
+            .short("a")
+            .long("abstract")
+            .value_name("ABSTRACT")
+            .help("Text to search into RFC abstract")
+        )
+        .arg(
             Arg::with_name("results")
             .short("r")
             .long("results")
@@ -108,7 +115,11 @@ fn main() {
     if let Some(v) = matches.value_of("title") {
         search_url.push_str(&format!("title={}&", v));
     } 
-     
+    
+    if let Some(v) = matches.value_of("abstract") {
+        search_url.push_str(&format!("abstract_box={}&", v));
+    }
+    
     // Make HTTP GET request to RFC-Editor and check the response status
     let res = reqwest::blocking::get(search_url).unwrap();
     assert!(res.status().is_success());
