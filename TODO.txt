@@ -1,3 +1,2 @@
-Add "abstract" searching filter
 Add "status" searching filter
 Add sorting by multiple keys (e.g., date and title)
